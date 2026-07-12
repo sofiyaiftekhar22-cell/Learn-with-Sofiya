@@ -1,0 +1,6 @@
+{
+  "name": "Learn with Sofiya",
+  "description": "Learn. Understand. Grow with Qur'an. Redesigned simple Study Planner and academic progress portal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

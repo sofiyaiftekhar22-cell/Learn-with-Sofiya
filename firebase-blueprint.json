@@ -1,0 +1,80 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "App user (teacher or student)",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "username": { "type": "string" },
+        "password": { "type": "string" },
+        "role": { "type": "string" },
+        "name": { "type": "string" }
+      },
+      "required": ["id", "username", "password", "role", "name"]
+    },
+    "StudentData": {
+      "title": "StudentData",
+      "description": "Complete profile, progress, schedule, resources and grades for a student",
+      "type": "object",
+      "properties": {
+        "surah": { "type": "string" },
+        "goal": { "type": "string" },
+        "progress": { "type": "number" },
+        "age": { "type": "number" },
+        "level": { "type": "string" },
+        "surahsCompleted": { "type": "number" },
+        "homework": { "type": "array" },
+        "rewards": { "type": "array" },
+        "parentNotes": { "type": "array" },
+        "teacherNotes": { "type": "array" },
+        "dua": { "type": "string" },
+        "parentCornerEnabled": { "type": "boolean" },
+        "attendance": { "type": "number" },
+        "missedClasses": { "type": "array" },
+        "tajweedRules": { "type": "array" },
+        "resources": { "type": "array" },
+        "classLink": { "type": "string" },
+        "classTimings": { "type": "string" },
+        "recurringDays": { "type": "array" },
+        "recurringTime": { "type": "string" },
+        "recurringTopic": { "type": "string" },
+        "cancelledDates": { "type": "array" },
+        "audioLessons": { "type": "array" },
+        "duas": { "type": "array" },
+        "monthlyPlan": { "type": "object" },
+        "calendarEvents": { "type": "object" },
+        "assignments": { "type": "array" },
+        "weeklyPlan": { "type": "object" },
+        "photo": { "type": "string" },
+        "resourceCategories": { "type": "array" },
+        "selfNotes": { "type": "array" },
+        "certificates": { "type": "array" }
+      }
+    },
+    "Announcement": {
+      "title": "Announcement",
+      "description": "Global announcement posted by the teacher",
+      "type": "object",
+      "properties": {
+        "text": { "type": "string" },
+        "date": { "type": "string" }
+      },
+      "required": ["text", "date"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User login credentials and roles"
+    },
+    "/studentData/{studentId}": {
+      "schema": "StudentData",
+      "description": "Individual student progress and profile"
+    },
+    "/announcements/{announcementId}": {
+      "schema": "Announcement",
+      "description": "Global announcements from the teacher"
+    }
+  }
+}
